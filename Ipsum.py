@@ -327,6 +327,8 @@ knowledge of the field, perhaps create an enum set.
                 mmax = info['maximum'] if 'maximum' in info else 100
                 if type == "number":
                     v = self.randomDouble(mmin,mmax)
+                    if 'digits' in info:
+                    	v = round(v, info['digits'])
 
                 if type == "integer":
                     v = self.randomInt(mmin,mmax)
